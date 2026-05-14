@@ -1,0 +1,31 @@
+/* Named Colors (147 predefined) */
+color: red;
+color: tomato;
+color: rebeccapurple;
+
+/* HEX (most common shorthand) */
+color: #ff0000;        /* Pure red */
+color: #f00;           /* Shorthand for #ff0000 */
+color: #3498db;        /* Nice blue */
+
+/* RGB / RGBA */
+color: rgb(255, 0, 0);           /* Red */
+color: rgba(255, 0, 0, 0.5);    /* 50% transparent red */
+
+/* HSL / HSLA (more intuitive for adjustments) */
+color: hsl(0, 100%, 50%);         /* Red */
+/*
+    H = Hue (0-360): 0=red, 120=green, 240=blue
+    S = Saturation (0-100%): 0=gray, 100%=full color
+    L = Lightness (0-100%): 0=black, 50%=normal, 100%=white
+*/
+color: hsla(0, 100%, 50%, 0.5);  /* Transparent red */
+
+
+text-align: center;          /* left, right, center, justify */
+text-decoration: underline;  /* underline, line-through, overline, none */
+text-transform: uppercase;   /* uppercase, lowercase, capitalize */
+text-indent: 2em;           /* First line indent */
+letter-spacing: 1px;        /* Space between characters */
+word-spacing: 2px;          /* Space between words */
+white-space: nowrap;        /* Prevents text from wrapping */

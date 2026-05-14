@@ -1,0 +1,517 @@
+.container {
+  display: flex; /* or inline-flex */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  border: 3px solid #333;
+  padding: 10px;
+  min-height: 200px;
+}
+
+.item {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+
+  /* Direction: Sets the main axis */
+  flex-direction: row; /* default - left to right */
+  flex-direction: row-reverse; /* right to left */
+  flex-direction: column; /* top to bottom */
+  flex-direction: column-reverse; /* bottom to top */
+
+  /* Wrapping: What happens when items overflow */
+  flex-wrap: nowrap; /* default - all on one line */
+  flex-wrap: wrap; /* items drop to new lines */
+  flex-wrap: wrap-reverse; /* wraps in reverse */
+
+  /* Alignment on MAIN axis (horizontal for row) */
+  justify-content: flex-start; /* items at start */
+  justify-content: flex-end; /* items at end */
+  justify-content: center; /* items centered */
+  justify-content: space-between; /* equal space between items */
+  justify-content: space-around; /* equal space around items */
+  justify-content: space-evenly; /* equal space everywhere */
+
+  /* Alignment on CROSS axis (vertical for row) */
+  align-items: stretch; /* default - fill container height */
+  align-items: flex-start; /* top of container */
+  align-items: flex-end; /* bottom of container */
+  align-items: center; /* vertically centered */
+  align-items: baseline; /* aligned by text baseline */
+
+  /* Multi-line alignment (only matters with wrap) */
+  align-content: stretch; /* default */
+  align-content: flex-start; /* lines packed at start */
+  align-content: center; /* lines centered */
+  align-content: space-between; /* lines spread apart */
+
+  /* Gap: Space between items (modern, clean) */
+  gap: 20px; /* both directions */
+  gap: 20px 10px; /* row-gap column-gap */
+  row-gap: 20px;
+  column-gap: 10px;
+}
+
+.item {
+  /* Growth: How much this item can grow relative to siblings */
+  flex-grow: 0; /* default - don't grow */
+  flex-grow: 1; /* take equal share of available space */
+  flex-grow: 2; /* take twice as much as items with flex-grow: 1 */
+
+  /* Shrinking: How much this item can shrink */
+  flex-shrink: 1; /* default - can shrink */
+  flex-shrink: 0; /* never shrink below flex-basis */
+
+  /* Basis: Starting size before grow/shrink */
+  flex-basis: auto; /* default - based on content */
+  flex-basis: 200px; /* start at 200px */
+  flex-basis: 0; /* start at zero (useful for equal columns) */
+
+  /* Shorthand: flex: grow shrink basis */
+  flex: 1; /* flex: 1 1 0% */
+  flex: 1 1 200px; /* grow, shrink, start at 200px */
+  flex: 0 0 300px; /* don't grow, don't shrink, stay at 300px */
+
+  /* Self-alignment: Override align-items for this one item */
+  align-self: auto; /* inherit from container */
+  align-self: flex-start;
+  align-self: flex-end;
+  align-self: center;
+  align-self: stretch;
+
+  /* Order: Rearrange visually without changing HTML */
+  order: 0; /* default */
+  order: 1; /* appears after items with order: 0 */
+  order: -1; /* appears before items with order: 0 */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  min-height: 100vh; /* full viewport height */
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1; /* All cards equal width */
+  padding: 20px;
+  background: #f5f5f5;
+}
+/* All cards stretch to match the tallest one's height automatically */
+
+.media {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.media-image {
+  flex-shrink: 0; /* Don't let the image get crushed */
+}
+
+.container {
+  display: grid;
+}
+
+.container {
+  display: grid;
+
+  /* Define columns */
+  grid-template-columns: 200px 1fr 1fr; /* 3 columns: fixed, flexible, flexible */
+  grid-template-columns: 1fr 2fr 1fr; /* Ratio: 1:2:1 */
+  grid-template-columns: repeat(3, 1fr); /* Shortcut: 3 equal columns */
+  grid-template-columns: repeat(4, 200px); /* 4 columns of 200px each */
+
+  /* The magical auto-fit pattern (responsive without media queries!) */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  /* Define rows */
+  grid-template-rows: 100px 1fr 80px; /* header, content, footer */
+  grid-template-rows: auto; /* height based on content */
+
+  /* Gap */
+  gap: 20px;
+  row-gap: 20px;
+  column-gap: 30px;
+}
+
+grid-template-columns: 1fr 2fr 1fr;
+/*
+    Total: 4 fractions
+    Column 1: 25% of available space
+    Column 2: 50% of available space (twice the others)
+    Column 3: 25% of available space
+*/
+
+.page {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+
+.item {
+  /* By line numbers (1-based, negative counts from end) */
+  grid-column: 1 / 3; /* start at line 1, end at line 3 (spans 2 columns) */
+  grid-column: 1 / span 2; /* start at line 1, span 2 columns */
+  grid-column: 1 / -1; /* full width (from first to last line) */
+
+  grid-row: 2 / 4;
+
+  /* Shorthand */
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 2;
+
+  /* By named area */
+  grid-area: header;
+
+  /* Super shorthand: row-start / column-start / row-end / column-end */
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.container {
+  /* Align items within their cells */
+  justify-items: stretch; /* horizontal (default) */
+  align-items: stretch; /* vertical (default) */
+
+  /* Align the entire grid within the container */
+  justify-content: center; /* horizontal */
+  align-content: center; /* vertical */
+}
+
+.item {
+  /* Override for individual item */
+  justify-self: center;
+  align-self: center;
+  /* Shorthand: */
+  place-self: center;
+}
+
+.parent {
+  position: relative; /* Creates positioning context */
+  width: 400px;
+  height: 300px;
+}
+
+.child {
+  position: absolute;
+  top: 20px; /* 20px from top of .parent */
+  right: 20px; /* 20px from right of .parent */
+}
+
+.element-back {
+  position: relative;
+  z-index: 1; /* lower number = behind */
+}
+
+.element-front {
+  position: relative;
+  z-index: 10; /* higher number = in front */
+}
+
+.element-super-front {
+  position: relative;
+  z-index: 999; /* in front of everything */
+}
+
+/* BASE STYLES: Mobile (under 480px) */
+.card {
+  width: 100%; /* full width on phone */
+  padding: 16px;
+  font-size: 14px;
+}
+
+/* TABLET: 768px and up */
+@media (min-width: 768px) {
+  .card {
+    width: 50%; /* two cards per row */
+    padding: 24px;
+    font-size: 16px;
+  }
+}
+
+/* DESKTOP: 1024px and up */
+@media (min-width: 1024px) {
+  .card {
+    width: 33.333%; /* three cards per row */
+    padding: 32px;
+  }
+}
+
+/* AVOID: Fixed pixels that overflow on small screens */
+.container {
+  width: 1200px; /* Breaks on phones */
+}
+
+/* USE: Relative units that adapt */
+.container {
+  width: 90%; /* Percent of parent */
+  max-width: 1200px; /* But never wider than this */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Font sizes: Use rem (relative to root) */
+html {
+  font-size: 16px; /* Base for rem calculations */
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem); /* min, preferred, max */
+}
+
+font-size: clamp(1rem, 2.5vw, 1.5rem);
+/*           ^^^^  ^^^^^^  ^^^^^^
+             min   preferred  max
+             
+    At small screens: never smaller than 1rem
+    At large screens: never larger than 1.5rem
+    Between: scales with viewport width (2.5% of viewport width)
+*/
+
+/* Prevent images from overflowing their containers */
+img {
+  max-width: 100%;
+  height: auto; /* maintain aspect ratio */
+  display: block; /* remove inline gap below images */
+}
+
+@media media-type and (condition) {
+  /* CSS rules */
+}
+
+/* Let content determine breakpoints, not device sizes */
+
+@media (min-width: 480px) {
+  /* Small phones to landscape */
+  /* ... */
+}
+
+@media (min-width: 768px) {
+  /* Tablets */
+  /* ... */
+}
+
+@media (min-width: 1024px) {
+  /* Small laptops */
+  /* ... */
+}
+
+@media (min-width: 1200px) {
+  /* Desktops */
+  /* ... */
+}
+
+/* Width (most common) */
+@media (min-width: 768px) {
+}
+@media (max-width: 767px) {
+}
+
+/* Orientation */
+@media (orientation: landscape) {
+}
+@media (orientation: portrait) {
+}
+
+/* Resolution (high-DPI screens) */
+@media (min-resolution: 2dppx) {
+  /* Retina displays */
+  .logo {
+    background-image: url("logo@2x.png");
+  }
+}
+
+/* Hover capability (touch vs mouse) */
+@media (hover: hover) {
+  /* Device has a precise pointer (mouse) */
+  .button:hover {
+    background: blue;
+  }
+}
+
+@media (hover: none) {
+  /* Touch device - no hover state */
+  .button:active {
+    background: blue;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --text: #f0f0f0;
+  }
+}
+
+/* Combining queries */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet only */
+}
+
+@media (min-width: 1024px), (orientation: landscape) {
+  /* Desktop OR landscape mobile */
+}
+
+/* Define in :root for global scope */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #2c3e50;
+  --bg-color: #ffffff;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --border-radius: 8px;
+  --max-width: 1200px;
+  --font-heading: "Merriweather", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Use with var() */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+button {
+  background-color: var(--primary-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+
+/* Fallback values */
+.element {
+  color: var(
+    --accent-color,
+    #ff0000
+  ); /* Use accent-color if defined, else red */
+}
+
+:root {
+  --bg: white;
+  --text: #333;
+  --card-bg: #f5f5f5;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #f0f0f0;
+  --card-bg: #2d2d2d;
+}
+
+/* Toggle with JavaScript: */
+/* document.documentElement.setAttribute('data-theme', 'dark'); */
+
+:root {
+  --container-padding: 16px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 32px;
+  }
+}
+
+.container {
+  padding: var(--container-padding); /* Automatically updates! */
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  /* Transition syntax: property duration timing-function delay */
+  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease; /* Apply to all properties (careful with performance) */
+
+  /* Multiple transitions */
+  transition:
+    background-color 0.3s,
+    transform 0.2s,
+    box-shadow 0.3s;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #YOUR_COLOR;
+  --spacing: YOUR_SPACING;
+  /* etc. */
+}

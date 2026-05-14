@@ -1,0 +1,402 @@
+/* selector {
+  property: value;
+  property: value;
+}
+
+/* Real example */
+h1 {
+  color: navy;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* p                    0,0,0,1 - element */
+/* .intro               0,0,1,0 - class */
+/* #featured            0,1,0,0 - ID */
+/* #featured .intro     0,1,1,0 - ID + class */
+/* p.intro              0,0,1,1 - element + class  */
+*/
+
+
+/* LOW specificity - Base styles */
+p {
+  color: gray;
+}
+
+/* HIGHER specificity - Override for specific case */
+.intro {
+  color: blue; /* This wins over "p" because class > element */
+}
+
+/* AVOID this unless absolutely necessary */
+#featured p {
+  color: red !important; /* Last resort - hard to override later */
+}
+
+/* Element selector - targets ALL elements of this type */
+p {
+  line-height: 1.6;
+}
+
+/* Class selector - targets elements with this class (reusable) */
+.highlight {
+  background-color: yellow;
+}
+
+/* ID selector - targets the ONE element with this ID */
+#main-heading {
+  font-size: 36px;
+}
+
+/* Universal selector - targets EVERYTHING (use for resets) */
+* {
+  box-sizing: border-box;
+}
+
+/* Descendant: Any <p> inside <article>, at ANY depth */
+article p {
+  color: #333;
+}
+
+/* Direct Child: <p> that is an IMMEDIATE child of <article> */
+article > p {
+  font-weight: bold;
+}
+
+/* Adjacent Sibling: <p> that comes RIGHT AFTER <h2> */
+h2 + p {
+  margin-top: 0;
+}
+
+/* General Sibling: ALL <p> that come after <h2> (same parent) */
+h2 ~ p {
+  text-indent: 20px;
+}
+
+/* All inputs with type="email" */
+input[type="email"] {
+  border-color: blue;
+}
+
+/* Links that start with "https" (secure) */
+a[href^="https"] {
+  color: green;
+}
+
+/* Links that end with ".pdf" */
+a[href$=".pdf"]::after {
+  content: " 📄";
+}
+
+/* Links that contain "github" */
+a[href*="github"] {
+  font-family: monospace;
+}
+
+/* When mouse hovers over link */
+a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+/* When keyboard focuses on input */
+input:focus {
+  outline: 2px solid blue;
+  border-color: blue;
+}
+
+/* First child of its parent */
+li:first-child {
+  font-weight: bold;
+}
+
+/* Last child of its parent */
+li:last-child {
+  border-bottom: none;
+}
+
+/* nth child (formula: an + b) */
+li:nth-child(odd) {
+  /* 1st, 3rd, 5th... */
+  background: #f0f0f0;
+}
+li:nth-child(even) {
+  /* 2nd, 4th, 6th... */
+  background: white;
+}
+li:nth-child(3n) {
+  /* Every 3rd item */
+  color: red;
+}
+
+/* Don't select something */
+button:not(.disabled) {
+  cursor: pointer;
+}
+
+/* Insert content before each quote */
+blockquote::before {
+  content: "❝";
+  font-size: 2em;
+  color: gray;
+}
+
+/* Insert content after links with PDF files */
+a[href$=".pdf"]::after {
+  content: " (PDF)";
+  font-size: 0.8em;
+}
+
+/* First line of a paragraph */
+p::first-line {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Text selected by user */
+::selection {
+  background: yellow;
+  color: black;
+}
+
+:root {
+  --primary: #3498db; /* Main brand color (buttons, links, highlights) */
+  --secondary: #2ecc71; /* Accent color (success messages, secondary buttons) */
+  --dark: #2c3e50; /* Text and dark backgrounds */
+  --light: #ecf0f1; /* Light backgrounds and dividers */
+  --white: #ffffff; /* Pure white for cards, contrast */
+}
+
+body {
+  /* Font family with fallbacks */
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  /* Base size (use rem for accessibility) */
+  font-size: 16px; /* Base for rem calculations */
+  font-size: 1rem; /* 1rem = browser default (usually 16px) */
+
+  /* Line height (unitless is preferred) */
+  line-height: 1.6; /* 1.6 × font-size */
+
+  /* Weight: 100 thin to 900 black */
+  font-weight: 400; /* Normal */
+  font-weight: 700; /* Bold */
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px if base is 16px */
+  font-weight: 800;
+  line-height: 1.2; /* Tighter for headings */
+  letter-spacing: -0.5px;
+}
+
+p {
+  max-width: 65ch; /* Optimal reading width (65 characters) */
+}
+
+font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+/*            ^^^^^^^   ^^^^^^^^^^^^^^^^  ^^^^^  ^^^^^^^^^^
+              Primary   Fallback 1        Fallback 2  System default
+*/
+body {
+  font-family: "Inter", sans-serif; /* Clean sans-serif for body */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Merriweather", serif; /* Elegant serif for headings */
+}
+
+.box {
+  /* Content dimensions */
+  width: 300px;
+  height: 200px;
+
+  /* Padding (inside the border) */
+  padding: 20px; /* All four sides */
+  padding: 20px 30px; /* Top/Bottom Right/Left */
+  padding: 10px 20px 30px; /* Top Right/Left Bottom */
+  padding: 10px 20px 30px 40px; /* Top Right Bottom Left (clock) */
+
+  /* Border */
+  border: 2px solid #333; /* Width Style Color */
+  border-radius: 8px; /* Rounded corners */
+
+  /* Margin (outside the border) */
+  margin: 20px; /* Same shorthand patterns as padding */
+  margin: 0 auto; /* Center horizontally (auto for left/right) */
+}
+
+/* Default behavior: width = content only */
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+/* content-box: 300px width = 300px content + 40px padding + 4px border = 344px total */
+
+/* Modern best practice: width = everything */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* border-box: 300px width = 300px total (content shrinks to accommodate padding/border) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.top-box {
+  margin-bottom: 30px;
+}
+.bottom-box {
+  margin-top: 20px;
+}
+/* Space between them: 30px (not 50px) */
+
+/* BLOCK: Full width, starts on new line, stacks vertically */
+.block-element {
+  display: block; /* Default for <div>, <p>, <h1>-<h6>, <section>, <article> */
+}
+
+/* INLINE: Flows with text, width/height ignored, padding/margin only horizontal */
+.inline-element {
+  display: inline; /* Default for <span>, <a>, <strong>, <em> */
+}
+
+/* INLINE-BLOCK: Flows inline but respects width, height, and all margins/padding */
+.inline-block-element {
+  display: inline-block; /* Great for navigation items, buttons in a row */
+}
+
+/* NONE: Removed from layout entirely (not just invisible) */
+.hidden-element {
+  display: none; /* Element doesn't take up ANY space */
+}
+
+.hidden-but-space-reserved {
+  visibility: hidden; /* Element is invisible but still takes up space */
+}
+
+.gone-from-layout {
+  display: none; /* Element is removed from the document flow entirely */
+}
+
+.hero-section {
+  /* Solid color */
+  background-color: #3498db;
+
+  /* Image */
+  background-image: url("hero-bg.jpg");
+
+  /* Gradient (no image file needed!) */
+  background-image: linear-gradient(to right, #3498db, #2ecc71);
+  background-image: linear-gradient(45deg, #3498db, #9b59b6, #e74c3c);
+
+  /* Size */
+  background-size: cover; /* Fill entire element, crop if needed */
+  background-size: contain; /* Show entire image, may leave gaps */
+  background-size: 200px 100px; /* Specific dimensions */
+
+  /* Position */
+  background-position: center;
+  background-position: top right;
+  background-position: 50% 50%;
+
+  /* Repetition */
+  background-repeat: no-repeat;
+  background-repeat: repeat-x; /* Repeat horizontally only */
+  background-repeat: repeat-y; /* Repeat vertically only */
+
+  /* Attachment (parallax effect) */
+  background-attachment: fixed; /* Background stays while content scrolls */
+
+  /* Shorthand (order doesn't strictly matter) */
+  background: #333 url("bg.jpg") center/cover no-repeat fixed;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none; /* Remove bullets */
+  display: flex; /* Horizontal layout (Week 4 topic preview) */
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Form Styling */
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block; /* Labels above inputs */
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit; /* Inputs don't inherit by default */
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker shade */
+}

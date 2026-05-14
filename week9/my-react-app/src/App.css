@@ -1,0 +1,165 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 13px;
+}
+
+.card-primary {
+  border-color: #3498db;
+  background: #ebf5fb;
+}
+
+.alert-success {
+  background-color: #e1f5ec;
+  border-left-color: #28a745;
+  border-left-width: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-left-color: #ffc107;
+  border-left-width: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  border-left-color: #dc3545;
+  border-left-width: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert-dismissible {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.alert-dismissible button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-primary {
+  color: white;
+  background-color: #007bff;
+}
+
+.badge-secondary {
+  color: white;
+  background-color: #6c757d;
+}
+
+.badge-success {
+  color: white;
+  background-color: #28a745;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10px;
+}
+
+/* Avatar Styles */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.avatar-sm {
+  width: 24px;
+  height: 24px;
+  font-size: 0.625rem;
+}
+
+.avatar-md {
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+}
+
+.avatar-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 1.5rem;
+}
+
+.avatar-bg-blue {
+  background-color: #3498db;
+  color: white;
+}
+
+.avatar-bg-green {
+  background-color: #28a745;
+  color: white;
+}
+
+.avatar-bg-orange {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-footer {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}

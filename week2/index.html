@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A description of your page for search engines"
+    />
+    <title>Page Title - Visible in Browser Tab</title>
+  </head>
+  <body>
+    <!-- All visible content goes here -->
+    <!-- <h1>This is the Main Page Title</h1>
+    <h2>Major Section Heading</h2>
+    <h3>Subsection Heading</h3>
+    <h4>Even More Specific</h4>
+    <h5>Getting Detailed</h5>
+    <h6>The Deepest Level</h6>
+    <p>
+      This is a paragraph of text. Browsers automatically add spacing before and
+      after paragraphs.
+    </p>
+
+    <p>This is another paragraph. Notice the gap between them.</p>
+
+    <p>
+      This paragraph contains <strong>important text</strong> and text with
+      <em>emphasis</em>. Sometimes you need a <br />
+      line break without starting a new paragraph.
+    </p> -->
+
+    <!-- <hr /> -->
+    <!-- Horizontal rule: a thematic break between sections -->
+    <!-- <p>
+      The <code>&lt;h1&gt;</code> element defines the most important heading.
+      Use it wisely&mdash;it carries SEO weight. All content is &copy; 2024.
+    </p> -->
+    <!-- <h3>My Frontend Skills</h3>
+    <ul>
+      <li>HTML5 & Semantic Markup</li>
+      <li>CSS3 & Modern Layout</li>
+      <li>JavaScript Fundamentals</li>
+      <li>React Component Architecture</li>
+    </ul> -->
+
+    <!-- <h3>Steps to Deploy a Website</h3>
+    <ol>
+      <li>Write the code</li>
+      <li>Test locally</li>
+      <li>Push to GitHub</li>
+      <li>Connect to hosting service</li>
+      <li>Set up custom domain</li>
+    </ol> -->
+
+    <!-- <dl>
+      <dt>HTML</dt>
+      <dd>HyperText Markup Language - the structure of web pages</dd>
+
+      <dt>CSS</dt>
+      <dd>Cascading Style Sheets - controls presentation and layout</dd>
+
+      <dt>JavaScript</dt>
+      <dd>Programming language that adds interactivity to websites</dd>
+    </dl> -->
+
+    <!-- <ul>
+      <li>
+        Frontend
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </li>
+      <li>
+        Backend
+        <ul>
+          <li>Node.js</li>
+          <li>Python</li>
+        </ul>
+      </li>
+      <li>
+        Database
+        <ul>
+          <li>MongoDB</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </li>
+    </ul> -->
+
+    <!-- <a href="https://developer.mozilla.org">MDN Web Docs</a> -->
+
+    <!-- Absolute URL: Full web address (links to external sites) -->
+    <!-- <a href="https://www.google.com">Go to Google</a> -->
+
+    <!-- Relative URL: Path relative to current page (links within your site) -->
+    <!-- <a href="about.html">About Page</a>
+    <a href="pages/contact.html">Contact Page</a>
+    <a href="../index.html">Back to Home</a> -->
+    <!-- ../ goes up one folder -->
+    <!-- <a
+      href="https://example.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Visit Example.com"
+    >
+      Safe External Link
+    </a> -->
+    <!-- <a href="mailto:hello@example.com?subject=Website Inquiry">Email Me</a>
+    <a href="tel:+15551234567">Call (555) 123-4567</a> -->
+    <!-- The link -->
+    <!-- <a href="#contact-section">Jump to Contact</a> -->
+
+    <!-- The target (much further down the page) -->
+    <!-- <section id="contact-section"> -->
+    <!-- <h2>Contact Me</h2> -->
+    <!-- ... -->
+    <!-- </section> -->
+    <!-- <img
+      src="images/profile.jpg"
+      alt="A smiling developer working at a laptop with code on the screen"
+      width="400"
+      height="300"
+      loading="lazy"
+    /> -->
+    <!-- <figure>
+      <img
+        src="chart.png"
+        alt="Bar chart showing quarterly revenue growth from Q1 to Q4"
+      />
+      <figcaption>
+        Fig. 1: Revenue increased 34% year-over-year in Q4 2024
+      </figcaption>
+    </figure> -->
+    <!-- <img
+      src="image-800.jpg"
+      srcset="image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w"
+      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+      alt="Responsive example image"
+    /> -->
+    <!-- BAD: Non-semantic - nothing has meaning -->
+    <!-- <div class="header">
+      <div class="nav">...</div>
+    </div>
+    <div class="main-content">...</div>
+    <div class="footer">...</div> -->
+
+    <!-- GOOD: Semantic - every element communicates its role -->
+    <!-- <header>
+      <nav>...</nav>
+    </header>
+    <main>...</main>
+    <footer>...</footer> -->
+    <!-- <header>
+      <h1>My Development Blog</h1>
+      <p>A journey through full stack development</p>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <h2>Understanding Semantic HTML</h2>
+          <p>Published on <time datetime="2024-07-26">July 26, 2024</time></p>
+        </header>
+
+        <p>This is the article content...</p>
+
+        <section>
+          <h3>Why Semantics Matter</h3>
+          <p>Screen readers use landmarks...</p>
+        </section>
+
+        <footer>
+          <p>
+            Author: Jane Developer | Tags: <a href="#">HTML</a>,
+            <a href="#">Accessibility</a>
+          </p>
+        </footer>
+      </article>
+
+      <aside>
+        <h3>Related Posts</h3>
+        <ul>
+          <li><a href="#">CSS Flexbox Guide</a></li>
+          <li><a href="#">JavaScript Arrays</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 My Development Blog. Built with semantic HTML.</p>
+    </footer> -->
+
+    <!-- <form action="/submit" method="post" novalidate> -->
+    <!-- Form controls go here -->
+    <!-- <button type="submit">Send</button> -->
+    <!-- </form> -->
+
+    <!-- Basic text -->
+    <!-- <div>
+      <label for="full-name">Full Name</label>
+      <input
+        type="text"
+        id="full-name"
+        name="full_name"
+        placeholder="Enter your full name"
+        required
+        minlength="2"
+        maxlength="50"
+      />
+    </div> -->
+
+    <!-- Email (with built-in validation) -->
+    <!-- <div>
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+      />
+    </div> -->
+
+    <!-- Password -->
+    <!-- <div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="8"
+        placeholder="Minimum 8 characters"
+        required
+      />
+    </div> -->
+    <!-- <input type="text" id="email" name="email_address" /> -->
+    <!-- <input type="text"  -->
+    required
+    <!-- Must be filled -->
+    minlength="3"
+    <!-- Minimum characters -->
+    maxlength="100"
+    <!-- Maximum characters -->
+    pattern="[A-Za-z]+"
+    <!-- Regex pattern (letters only) -->
+    placeholder="Letters only">
+    <!-- Hint text -->
+
+    <!-- Number -->
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" min="0" max="120" step="1" />
+
+    <!-- Date -->
+    <label for="birthday">Date of Birth</label>
+    <input type="date" id="birthday" name="birthday" />
+
+    <!-- Phone -->
+    <label for="phone">Phone Number</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      placeholder="555-123-4567"
+    />
+
+    <!-- URL -->
+    <label for="website">Website</label>
+    <input
+      type="url"
+      id="website"
+      name="website"
+      placeholder="https://example.com"
+    />
+
+    <!-- Range (slider) -->
+    <label for="volume">Volume</label>
+    <input
+      type="range"
+      id="volume"
+      name="volume"
+      min="0"
+      max="100"
+      value="50"
+    />
+
+    <!-- Color picker -->
+    <label for="color">Favorite Color</label>
+    <input type="color" id="color" name="color" value="#3498db" />
+
+    <!-- Number -->
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" min="0" max="120" step="1" />
+
+    <!-- Date -->
+    <label for="birthday">Date of Birth</label>
+    <input type="date" id="birthday" name="birthday" />
+
+    <!-- Phone -->
+    <label for="phone">Phone Number</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      placeholder="555-123-4567"
+    />
+
+    <!-- URL -->
+    <label for="website">Website</label>
+    <input
+      type="url"
+      id="website"
+      name="website"
+      placeholder="https://example.com"
+    />
+
+    <!-- Range (slider) -->
+    <label for="volume">Volume</label>
+    <input
+      type="range"
+      id="volume"
+      name="volume"
+      min="0"
+      max="100"
+      value="50"
+    />
+
+    <!-- Color picker -->
+    <label for="color">Favorite Color</label>
+    <input type="color" id="color" name="color" value="#3498db" />
+
+    <!-- Checkboxes: Multiple selections allowed -->
+    <fieldset>
+      <legend>Skills (select all that apply)</legend>
+
+      <input type="checkbox" id="html" name="skills" value="html" checked />
+      <label for="html">HTML</label>
+
+      <input type="checkbox" id="css" name="skills" value="css" />
+      <label for="css">CSS</label>
+
+      <input type="checkbox" id="js" name="skills" value="js" />
+      <label for="js">JavaScript</label>
+    </fieldset>
+
+    <!-- Radio Buttons: Only one selection allowed -->
+    <fieldset>
+      <legend>Experience Level</legend>
+
+      <input
+        type="radio"
+        id="beginner"
+        name="experience"
+        value="beginner"
+        checked
+      />
+      <label for="beginner">Beginner</label>
+
+      <input
+        type="radio"
+        id="intermediate"
+        name="experience"
+        value="intermediate"
+      />
+      <label for="intermediate">Intermediate</label>
+
+      <input type="radio" id="advanced" name="experience" value="advanced" />
+      <label for="advanced">Advanced</label>
+    </fieldset>
+
+    <!-- Multi-line text -->
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      cols="40"
+      placeholder="Type your message here..."
+      maxlength="500"
+    ></textarea>
+
+    <!-- Dropdown select -->
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+      <option value="">-- Select your country --</option>
+      <option value="us">United States</option>
+      <option value="ca">Canada</option>
+      <option value="uk">United Kingdom</option>
+      <optgroup label="Europe">
+        <option value="fr">France</option>
+        <option value="de">Germany</option>
+      </optgroup>
+    </select>
+    <!-- Submit button (submits the form) -->
+    <button type="submit">Send Message</button>
+
+    <!-- Reset button (clears all fields - rarely used) -->
+    <button type="reset">Clear Form</button>
+
+    <!-- Plain button (does nothing by default - JavaScript makes it work) -->
+    <button type="button">Click Me</button>
+
+    <!-- Input as button (alternative syntax) -->
+    <input type="submit" value="Send Message" />
+
+    <table>
+      <caption>
+        Quarterly Revenue by Product (2024)
+      </caption>
+
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Q1</th>
+          <th scope="col">Q2</th>
+          <th scope="col">Q3</th>
+          <th scope="col">Q4</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Widget A</th>
+          <td>$12,400</td>
+          <td>$15,200</td>
+          <td>$18,100</td>
+          <td>$21,300</td>
+        </tr>
+        <tr>
+          <th scope="row">Widget B</th>
+          <td>$8,700</td>
+          <td>$9,400</td>
+          <td>$10,200</td>
+          <td>$11,800</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td>$21,100</td>
+          <td>$24,600</td>
+          <td>$28,300</td>
+          <td>$33,100</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <tr>
+      <td colspan="3">This cell spans 3 columns</td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">This cell spans 2 rows</td>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+    </tr>
+  </body>
+</html>

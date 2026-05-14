@@ -1,0 +1,28 @@
+# 1. Initialize Git in your project
+git init
+# Output: Initialized empty Git repository in .../full-stack-journey/.git/
+
+# 2. Create a file (do this in VS Code first, save as index.html)
+# Then check what Git sees:
+git status
+# Output: Untracked files: index.html (red)
+
+# 3. Add file to staging area
+git add index.html
+# Or stage everything: git add .
+
+# 4. Check status again
+git status
+# Output: Changes to be committed: new file: index.html (green)
+
+# 5. Commit your snapshot
+git commit -m "Create initial HTML file"
+# The -m flag provides a message. ALWAYS write meaningful messages.
+
+# 6. View your commit history
+git log
+# Shows commits with IDs, authors, dates, and messages
+
+git remote add origin https://github.com/YOUR_USERNAME/full-stack-journey.git
+git branch -M main
+git push -u origin main

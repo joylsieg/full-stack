@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+Not an HTML tag—it's a declaration
+
+Tells the browser: "Render this page using modern HTML5 standards"
+
+Without it, browsers fall back to "quirks mode" (which emulates 1990s rendering bugs—you don't want that)
+
+Always the very first line of every HTML file
+
+<html lang="en">
+
+The root element wrapping everything except <!DOCTYPE>
+
+lang="en" tells screen readers and search engines the page language
+
+Use "es" for Spanish, "fr" for French, etc.
+
+Accessibility requirement, not optional
+
+Semantic Inline Elements:
+

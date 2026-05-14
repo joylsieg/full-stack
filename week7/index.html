@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+        
+        <!-- Task Form -->
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Enter a new task..." required>
+            <select id="priority-select">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+        
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        
+        <!-- Task List -->
+        <ul id="task-list"></ul>
+        
+        <!-- Stats -->
+        <div class="stats">
+            <p id="task-count">0 tasks</p>
+            <button id="clear-completed">Clear Completed</button>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </div>
+</body>
+</html>

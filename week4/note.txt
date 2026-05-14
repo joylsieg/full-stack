@@ -1,0 +1,66 @@
+/* STATIC: Default - normal document flow */
+position: static;
+/* top, right, bottom, left, z-index have NO effect */
+
+/* RELATIVE: Offset from normal position but space is preserved */
+position: relative;
+top: 10px;      /* move down 10px from where it normally sits */
+left: 20px;     /* move right 20px */
+/* Element still takes up its original space */
+
+/* ABSOLUTE: Removed from flow, positioned relative to nearest positioned ancestor */
+position: absolute;
+top: 0;         /* at the top of the containing element */
+right: 0;       /* at the right of the containing element */
+/* Element takes no space in the flow. Overlaps other content. */
+
+/* FIXED: Removed from flow, positioned relative to the VIEWPORT */
+position: fixed;
+bottom: 20px;   /* 20px from the bottom of the browser window */
+right: 20px;    /* 20px from the right of the browser window */
+/* Stays in place even when scrolling. Great for nav bars, chat widgets. */
+
+/* STICKY: Hybrid - relative until scroll threshold, then fixed */
+position: sticky;
+top: 0;         /* sticks to the top when you scroll past it */
+/* Must specify at least one of top/right/bottom/left */
+
+transition-timing-function: ease;           /* default - slow start, fast middle, slow end */
+transition-timing-function: ease-in;        /* slow start */
+transition-timing-function: ease-out;       /* slow end */
+transition-timing-function: ease-in-out;    /* slow start and end */
+transition-timing-function: linear;         /* constant speed throughout */
+transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* custom curve */
+
+/* Translate (Move) */
+transform: translateX(20px);        /* Move right 20px */
+transform: translateY(-10px);       /* Move up 10px */
+transform: translate(20px, -10px);  /* Both axes */
+transform: translate(-50%, -50%);   /* Centering trick! */
+
+/* Scale */
+transform: scale(1.1);              /* 110% size */
+transform: scale(0.9);              /* 90% size */
+transform: scale(1.2, 0.8);        /* Scale X and Y differently */
+
+/* Rotate */
+transform: rotate(45deg);           /* Clockwise 45° */
+transform: rotate(-15deg);          /* Counter-clockwise */
+transform: rotate(0.5turn);         /* Half turn (180°) */
+
+/* Skew */
+transform: skew(10deg);             /* Skew on X axis */
+transform: skew(5deg, -5deg);       /* Skew X and Y */
+
+/* Multiple transforms (order matters!) */
+transform: translateY(-5px) scale(1.05) rotate(2deg);
+
+/* Combined with transitions for hover effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
